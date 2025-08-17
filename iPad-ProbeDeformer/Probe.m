@@ -113,4 +113,13 @@
     return(dcn.normalised());
 }
 
+// Getter methods for vertices and texture coordinates (for Swift access)
+- (GLfloat*)getVertices {
+    return vertices;
+}
+
+- (GLfloat*)getTextureCoords {
+    return textureCoords;
+}
+
 @end

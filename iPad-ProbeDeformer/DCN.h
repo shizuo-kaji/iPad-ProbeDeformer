@@ -17,13 +17,11 @@
 
 #pragma once
 
-#include <iostream>
+#ifdef __cplusplus
 #include <math.h>
-#include <vector>
-
 using namespace std;
-
 template <class T>
+
 
 class DCN{
 public:
@@ -62,7 +60,8 @@ public:
     }
     /// print the contents of the DCN in a human readable form to stdout
 	void print(){
-		std::cout << real[0] << "+" << real[1] <<  " i + (" << dual[0] << "+" << dual[1] << "i)e" << std::endl;
+		// Debug output disabled for iOS compilation
+		// Original: std::cout << real[0] << "+" << real[1] <<  " i + (" << dual[0] << "+" << dual[1] << "i)e" << std::endl;
 	}
     /// conjugation
     /// @return the conjugate of the DCN
@@ -152,19 +151,11 @@ public:
         result.dual[1] = dual[1]+dcn.dual[1];
         return result;
     }
-    /** linear blend (DLB)
-     @param dcns array of DCN's to be blended
-     @param weights weights of the correspoding DCN's
-     @return blended normalised DCN
+    /** linear blend (DLB) - removed for iOS compatibility
+     * This method used std::vector which is not available in iOS bridging context
+     * The functionality is implemented elsewhere using NSMutableArray in Probe.m
      */
-    DCN blend (std::vector<DCN> dcns, std::vector<T> weights){
-        assert(dcns.size() == weights.size());
-        DCN result;
-        for(int i=0;i<dcns.size();i++){
-            result += dcns[i] * weights[i];
-        }
-        return(result.normalised());
-    }
 
 private:
 };
+#endif

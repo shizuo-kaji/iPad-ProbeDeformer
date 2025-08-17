@@ -10,12 +10,15 @@
  */
 
 #import <Foundation/Foundation.h>
-#include "Eigen/Dense"
-#include "DCN.h"
 
+#ifdef __cplusplus
+#include "../Libraries/eigen/Eigen/Dense"
+#include "DCN.h"
 using namespace Eigen;
+#endif
 
 @interface Probe : NSObject {
+#ifdef __cplusplus
     // dcn of transformation
     DCN<float> dcn;
     // dcn of initial vertex position    
@@ -23,6 +26,7 @@ using namespace Eigen;
     @public
     // effect for each vertex of mesh
     VectorXf weight;
+#endif
     // coordinates of the four courners for display
     GLfloat vertices[8];
     GLfloat textureCoords[8];
@@ -54,9 +58,15 @@ using namespace Eigen;
 - (void)computeOrigVertex;
 // set the current state as the initial state
 - (void)freeze;
+#ifdef __cplusplus
 // DLB interpolation
 + (DCN<float>)DLB:(NSMutableArray*)probes Weight:(int)w;
+#endif
 // distance to a given point
 - (float)distance2X:(float)lx Y:(float)ly;
+
+// Getter methods for vertices and texture coordinates (for Swift access)
+- (GLfloat*)getVertices;
+- (GLfloat*)getTextureCoords;
 
 @end

@@ -11,9 +11,11 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
-#include "Eigen/Sparse"
-#include "Eigen/Dense"
 #import "Probe.h"
+
+#ifdef __cplusplus
+#include "../Libraries/eigen/Eigen/Sparse"
+#include "../Libraries/eigen/Eigen/Dense"
 #include "DCN.h"
 
 using namespace Eigen;
@@ -22,14 +24,18 @@ typedef SparseMatrix<float> SpMat;
 typedef SimplicialLDLT<SpMat> SpSolver;
 //typedef SparseLU<SpMat, COLAMDOrdering<int>> SpSolver;
 typedef Triplet<float> T;
+#endif
+
 typedef enum _weightMode {EUCLIDEAN, HARMONIC, BIHARMONIC} weightMode;
 typedef enum _deformMode {DCNBlend,LinearBlend,MLS_RIGID,MLS_SIM} deformMode;
 
 @interface ImageVertices : NSObject  {
+#ifdef __cplusplus
     // dcn of initial vertex position
     DCN<float> *origVertex;
     @public
     SpMat laplacian;
+#endif
 }
 // mesh division
 @property GLuint verticalDivisions,horizontalDivisions;

@@ -10,7 +10,7 @@
         <!--GLKit View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <glkViewController preferredFramesPerSecond="30" id="BV1-FR-VrT" customClass="ViewController" sceneMemberID="viewController">
+                <glkViewController preferredFramesPerSecond="30" id="BV1-FR-VrT" customClass="ViewController" customModule="iPad_ProbeDeformer_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TiJ-Yn-mIF"/>
                         <viewControllerLayoutGuide type="bottom" id="Jjb-t6-CVp"/>
@@ -26,22 +26,22 @@
                                         <leftBarButtonItems>
                                             <barButtonItem title="Image" id="xdK-FA-AGh">
                                                 <connections>
-                                                    <action selector="pushButton_ReadImage:" destination="SZV-WD-TEh" id="kMp-48-DzI"/>
+                                                    <action selector="pushButton_ReadImage:" destination="BV1-FR-VrT" id="kMp-48-DzI"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Save" id="J3h-fm-Q6x" userLabel="Save">
                                                 <connections>
-                                                    <action selector="pushSaveImg:" destination="SZV-WD-TEh" id="hRJ-VA-XFm"/>
+                                                    <action selector="pushSaveImg:" destination="BV1-FR-VrT" id="hRJ-VA-XFm"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Load" id="LpF-Bz-fxH" userLabel="csv">
                                                 <connections>
-                                                    <action selector="pushPickFile:" destination="SZV-WD-TEh" id="Oip-l6-YKP"/>
+                                                    <action selector="pushPickFile:" destination="BV1-FR-VrT" id="Oip-l6-YKP"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Preset" id="Gsu-MR-je1" userLabel="preset">
                                                 <connections>
-                                                    <action selector="pushCycleImg:" destination="SZV-WD-TEh" id="mbo-NI-TlF"/>
+                                                    <action selector="pushCycleImg:" destination="BV1-FR-VrT" id="mbo-NI-TlF"/>
                                                 </connections>
                                             </barButtonItem>
                                         </leftBarButtonItems>
@@ -53,12 +53,12 @@
                                             </barButtonItem>
                                             <barButtonItem title="Clear" id="tTq-sG-lca">
                                                 <connections>
-                                                    <action selector="pushButton_Initialize:" destination="SZV-WD-TEh" id="7yo-BI-y2c"/>
+                                                    <action selector="pushButton_Initialize:" destination="BV1-FR-VrT" id="7yo-BI-y2c"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="remove" id="0mn-Lg-iYu" userLabel="rem">
                                                 <connections>
-                                                    <action selector="pushRemoveAllProbes:" destination="SZV-WD-TEh" id="HO0-PR-xRG"/>
+                                                    <action selector="pushRemoveAllProbes:" destination="BV1-FR-VrT" id="HO0-PR-xRG"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -77,7 +77,7 @@
                                                 <segment title="Cam"/>
                                             </segments>
                                             <connections>
-                                                <action selector="pushCameraSw:" destination="SZV-WD-TEh" eventType="valueChanged" id="BnO-OH-lmw"/>
+                                                <action selector="pushCameraSw:" destination="BV1-FR-VrT" eventType="valueChanged" id="BnO-OH-lmw"/>
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
@@ -91,7 +91,7 @@
                                                 <segment title="B"/>
                                             </segments>
                                             <connections>
-                                                <action selector="pushWeightMode:" destination="SZV-WD-TEh" eventType="valueChanged" id="7bt-WI-p70"/>
+                                                <action selector="pushWeightMode:" destination="BV1-FR-VrT" eventType="valueChanged" id="7bt-WI-p70"/>
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
@@ -106,13 +106,13 @@
                                                 <segment title="MLSS"/>
                                             </segments>
                                             <connections>
-                                                <action selector="pushDeformMode:" destination="SZV-WD-TEh" eventType="valueChanged" id="J8F-W0-W2w"/>
+                                                <action selector="pushDeformMode:" destination="BV1-FR-VrT" eventType="valueChanged" id="J8F-W0-W2w"/>
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
                                     <barButtonItem title="Undo" id="psF-6Q-5ae" userLabel="Undo">
                                         <connections>
-                                            <action selector="pushUndo:" destination="SZV-WD-TEh" id="ymZ-Nw-LA4"/>
+                                            <action selector="pushUndo:" destination="BV1-FR-VrT" id="ymZ-Nw-LA4"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="wwh-8u-vIh">
